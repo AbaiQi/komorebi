@@ -52,7 +52,7 @@ namespace WallpaperCreator.OnScreen {
 
             var wallpaperPath = GLib.Path.build_filename(Paths.getConfigDir(), "wallpapers", wallpaperName);
 
-            descLabel.set_markup(@"<span font='WenQuanYi Zen Hei 12'>你的墙纸被复制到:\n<b>$wallpaperPath</b>\n你现在可以在 <i>'更改壁纸'</i>中修改壁纸.</span>");
+            descLabel.set_markup(@"<span font='WenQuanYi Zen Hei 12'>你的壁纸被复制到:\n<b>$wallpaperPath</b>\n你现在可以在 <i>'更改壁纸'</i>中修改壁纸.</span>");
 
             closeButton.margin_top = 20;
             closeButton.halign = Align.CENTER;
