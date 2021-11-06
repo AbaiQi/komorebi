@@ -28,17 +28,17 @@ namespace WallpaperCreator.OnScreen {
 		// Custom headerbar
 		HeaderBar headerBar = new HeaderBar();
 
-		Button closeButton = new Button.with_label("Close");
-		Button addLayerButton = new Button.with_label("Add Layer") { visible = false };
+		Button closeButton = new Button.with_label("关闭");
+		Button addLayerButton = new Button.with_label("添加图层") { visible = false };
 
-		Button nextButton = new Button.with_label("Next");
+		Button nextButton = new Button.with_label("下一步");
 
 		// Confirmation popover
 		Popover popover = new Popover(null);
 		Grid popoverGrid = new Grid();
-		Label confirmationLabel = new Label("Are you sure?");
-		Button cancelButton = new Button.with_label("Cancel");
-		Button yesButton = new Button.with_label("Yes");
+		Label confirmationLabel = new Label("你确定吗？");
+		Button cancelButton = new Button.with_label("取消");
+		Button yesButton = new Button.with_label("是的");
 
 		Gtk.Box mainBox = new Box(Orientation.VERTICAL, 0);
 
@@ -56,7 +56,7 @@ namespace WallpaperCreator.OnScreen {
 			*{
 				background-color: rgba(0, 0, 0, 0.6);
 				box-shadow: none;
-				color: white;
+				color: black;
 				border-width: 0px;
 			}
 			";
@@ -73,7 +73,7 @@ namespace WallpaperCreator.OnScreen {
 
 		public NewWallpaperWindow () {
 
-			title = "New Komorebi Wallpaper";
+			title = "新的Komorebi壁纸";
 			set_size_request(1050, 700);
 			resizable = false;
 			window_position = WindowPosition.CENTER;
@@ -114,9 +114,9 @@ namespace WallpaperCreator.OnScreen {
 			addLayerButton.released.connect(() => {
 
 				Gtk.FileChooserDialog fileChooseDialog = new Gtk.FileChooserDialog (
-					"Select an image", this, Gtk.FileChooserAction.OPEN,
-					"Cancel", Gtk.ResponseType.CANCEL,
-					"Open", Gtk.ResponseType.ACCEPT
+					"选择一张图片", this, Gtk.FileChooserAction.OPEN,
+					"取消", Gtk.ResponseType.CANCEL,
+					"打开", Gtk.ResponseType.ACCEPT
 				);
 
 				FileFilter filter = new FileFilter();
@@ -140,12 +140,12 @@ namespace WallpaperCreator.OnScreen {
 
 					if(wallpaperName == null || (wallpaperType == "image" || wallpaperType == "video") && filePath == null) {
 
-						displayError("Please enter a wallpaper name and choose a file");
+						displayError("请输入壁纸名称并选择文件");
 						return;
 
 					} else if (wallpaperName == null || wallpaperType == "web_page" && webPageUrl == null) {
 
-						displayError("Please enter a wallpaper name, a valid URL, and a thumbnail");
+						displayError("请输入壁纸名称、有效的地址和缩略图");
 						return;
 					}
 

@@ -29,25 +29,25 @@ namespace WallpaperCreator.OnScreen {
         Label aboutLabel = new Label("");
 
 
-        Label nameLabel = new Label("Give your wallpaper a name:");
+        Label nameLabel = new Label("给你的壁纸起个名字:");
         Entry nameEntry = new Entry() { placeholder_text = "Mountain Summit" };
 
         FileFilter imageFilter = new FileFilter ();
         FileFilter videoFilter = new FileFilter ();
 
-        Label typeLabel = new Label("My wallpaper is");
+        Label typeLabel = new Label("我的墙纸是");
         ComboBoxText typeComboBox = new ComboBoxText();
 
-        Label chooseFileLabel = new Label("Where is the image located?");
+        Label chooseFileLabel = new Label("图像在哪里？");
         Box locationBox = new Box(Orientation.HORIZONTAL, 10);
         Entry locationEntry = new Entry() { placeholder_text = "~/Pictures/my_picture.jpg" };
-        FileChooserButton chooseFileButton = new FileChooserButton("Choose File", Gtk.FileChooserAction.OPEN);
+        FileChooserButton chooseFileButton = new FileChooserButton("选择文件", Gtk.FileChooserAction.OPEN);
 
         Revealer revealer = new Revealer();
 
         Box thumbnailBox = new Box(Orientation.VERTICAL, 5);
-        Label chooseThumbnailLabel = new Label("Where is the thumbnail located?");
-        FileChooserButton chooseThumbnailButton = new FileChooserButton("Choose Thumbnail", Gtk.FileChooserAction.OPEN);
+        Label chooseThumbnailLabel = new Label("缩略图在哪里？");
+        FileChooserButton chooseThumbnailButton = new FileChooserButton("选择缩略图", Gtk.FileChooserAction.OPEN);
 
         public InitialPage() {
 
@@ -72,9 +72,9 @@ namespace WallpaperCreator.OnScreen {
 
             aboutLabel.halign = Align.START;
 
-            typeComboBox.append("image", "An image");
-            typeComboBox.append("video", "A video");
-            typeComboBox.append("web_page", "A web page");
+            typeComboBox.append("image", "一张图片");
+            typeComboBox.append("video", "一段视频");
+            typeComboBox.append("web_page", "一个网页");
             typeComboBox.active = 0;
 
             wallpaperType = "image";
@@ -105,7 +105,7 @@ namespace WallpaperCreator.OnScreen {
                 if(wallpaperType == "image") {
 
                     chooseFileButton.set_filter (imageFilter);
-                    chooseFileLabel.label = "Where is the image located?";
+                    chooseFileLabel.label = "图像在哪里？";
                     locationEntry.placeholder_text = "~/Pictures/my_picture.jpg";
                     locationEntry.set_sensitive(false);
 
@@ -116,7 +116,7 @@ namespace WallpaperCreator.OnScreen {
                 } else if(wallpaperType == "web_page") {
 
                     chooseFileButton.set_filter (imageFilter);
-                    chooseFileLabel.label = "What is the URL?";
+                    chooseFileLabel.label = "网址是什么？";
                     locationEntry.placeholder_text = "https://sample.com/random/{{screen_width}}x{{screen_height}}";
                     locationEntry.set_sensitive(true);
 
@@ -127,7 +127,7 @@ namespace WallpaperCreator.OnScreen {
                 } else {
 
                     chooseFileButton.set_filter (videoFilter);
-                    chooseFileLabel.label = "Where is the video located?";
+                    chooseFileLabel.label = "视频在哪里？";
                     locationEntry.placeholder_text = "~/my_video.mp4";
                     locationEntry.set_sensitive(false);
 

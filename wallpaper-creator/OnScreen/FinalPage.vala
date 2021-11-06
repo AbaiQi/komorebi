@@ -48,11 +48,11 @@ namespace WallpaperCreator.OnScreen {
 
             wallpaperName = wallpaperName.replace(" ", "_").replace(".", "_").down();
 
-            titleLabel.set_markup("<span font='Lato 20'>Done</span>");
+            titleLabel.set_markup("<span font='WenQuanYi Zen Hei 20'>已完成</span>");
 
             var wallpaperPath = GLib.Path.build_filename(Paths.getConfigDir(), "wallpapers", wallpaperName);
 
-            descLabel.set_markup(@"<span font='Lato Light 12'>Your wallpaper was copied to:\n<b>$wallpaperPath</b>\nYou can now change the wallpaper in <i>'Change Wallpaper'</i>.</span>");
+            descLabel.set_markup(@"<span font='WenQuanYi Zen Hei 12'>你的墙纸被复制到:\n<b>$wallpaperPath</b>\n你现在可以在 <i>'更改壁纸'</i>中修改壁纸.</span>");
 
             closeButton.margin_top = 20;
             closeButton.halign = Align.CENTER;

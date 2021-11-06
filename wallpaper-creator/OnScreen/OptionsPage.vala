@@ -46,35 +46,35 @@ namespace WallpaperCreator.OnScreen {
 
         ComboBoxText dateTimeParallaxComboBox = new ComboBoxText();
 
-        Label dateTimeMarginsLabel = new Label("Margins:");
+        Label dateTimeMarginsLabel = new Label("边缘:");
         Grid dateTimeMarginsGrid = new Grid();
         SpinButton  dateTimeMarginLeftEntry = new SpinButton.with_range(0,2000, 5);
         SpinButton dateTimeMarginRightEntry = new SpinButton.with_range(0,2000, 5);
         SpinButton dateTimeMarginTopEntry = new SpinButton.with_range(0,2000, 5);
         SpinButton dateTimeMarginBottomEntry = new SpinButton.with_range(0,2000, 5);
 
-        Label dateTimePositionLabel = new Label("Position:");
+        Label dateTimePositionLabel = new Label("位置:");
         ComboBoxText dateTimePositionComboBox = new ComboBoxText();
 
-        Label dateTimeAlignmentLabel = new Label("Alignment:");
+        Label dateTimeAlignmentLabel = new Label("对齐:");
         ComboBoxText dateTimeAlignmentComboBox = new ComboBoxText();
 
         ComboBoxText dateTimeAlwaysOnTopComboBox = new ComboBoxText();
 
-        Label dateTimeColorLabel = new Label("Color and Alpha:");
+        Label dateTimeColorLabel = new Label("颜色和Alpha:");
         Box dateTimeColorBox = new Box(Orientation.HORIZONTAL, 10);
         ColorButton dateTimeColorButton = new ColorButton.with_rgba({222, 222, 222, 255});
         SpinButton dateTimeAlphaEntry = new SpinButton.with_range(0, 255, 1) { value = 255 };
 
-        Label dateTimeShadowColorLabel = new Label("Shadow Color and Alpha:");
+        Label dateTimeShadowColorLabel = new Label("阴影颜色和Alpha:");
         Box dateTimeShadowColorBox = new Box(Orientation.HORIZONTAL, 10);
         ColorButton dateTimeShadowColorButton = new ColorButton.with_rgba({222, 222, 222, 255});
         SpinButton dateTimeShadowAlphaEntry = new SpinButton.with_range(0, 255, 1) { value = 255 };
 
-        Label timeFontLabel = new Label("Time Font:");
+        Label timeFontLabel = new Label("时间字体:");
         FontButton timeFontButton = new FontButton.with_font("Lato Light 30") { use_font = true };
 
-        Label dateFontLabel = new Label("Date Font:");
+        Label dateFontLabel = new Label("日期字体:");
         FontButton dateFontButton = new FontButton.with_font("Lato Light 20") { use_font = true };
 
         // Asset (Layer)
@@ -82,7 +82,7 @@ namespace WallpaperCreator.OnScreen {
 
         ComboBoxText assetVisibleComboBox = new ComboBoxText();
 
-        Label assetAnimationLabel = new Label("Animation Mode & Speed:");
+        Label assetAnimationLabel = new Label("动画模式和速度:");
         Box assetAnimationBox = new Box(Orientation.HORIZONTAL, 10);
         ComboBoxText assetModeComboBox = new ComboBoxText();
         SpinButton assetSpeedEntry = new SpinButton.with_range(100, 1000, 1);
@@ -113,20 +113,20 @@ namespace WallpaperCreator.OnScreen {
             optionsBox.halign = Align.START;
             optionsBox.hexpand = true;
 
-            wallpaperTitleLabel.set_markup("<span font='Lato Light 15'>Wallpaper Options:</span>");
+            wallpaperTitleLabel.set_markup("<span font='WenQuanYi Zen Hei 15'>壁纸选项:</span>");
 
-            wallpaperParallaxComboBox.append("enable", "Enable parallax");
-            wallpaperParallaxComboBox.append("disable", "Disable parallax");
+            wallpaperParallaxComboBox.append("enable", "启用视差");
+            wallpaperParallaxComboBox.append("disable", "禁用视差");
             wallpaperParallaxComboBox.active = 1;
 
-            dateTimeTitleLabel.set_markup("<span font='Lato Light 15'>Date &amp; Time Options:</span>");
+            dateTimeTitleLabel.set_markup("<span font='WenQuanYi Zen Hei 15'>日期和时间选项:</span>");
 
-            dateTimeVisibleComboBox.append("show", "Show date & time");
-            dateTimeVisibleComboBox.append("hide", "Hide date & time");
+            dateTimeVisibleComboBox.append("show", "显示日期和时间");
+            dateTimeVisibleComboBox.append("hide", "隐藏日期和时间");
             dateTimeVisibleComboBox.active = 0;
 
-            dateTimeParallaxComboBox.append("enable", "Enable parallax");
-            dateTimeParallaxComboBox.append("disable", "Disable parallax");
+            dateTimeParallaxComboBox.append("enable", "启用视差");
+            dateTimeParallaxComboBox.append("disable", "禁用视差");
             dateTimeParallaxComboBox.active = 1;
 
             dateTimePositionComboBox.append_text("Top Left");
@@ -145,20 +145,20 @@ namespace WallpaperCreator.OnScreen {
             dateTimeAlignmentComboBox.append_text("End");
             dateTimeAlignmentComboBox.active = 1;
 
-            dateTimeAlwaysOnTopComboBox.append("enable", "Always show on top");
-            dateTimeAlwaysOnTopComboBox.append("disable", "Show under layer");
+            dateTimeAlwaysOnTopComboBox.append("enable", "始终显示在上面");
+            dateTimeAlwaysOnTopComboBox.append("disable", "显示在层下");
             dateTimeAlwaysOnTopComboBox.active = 0;
 
-            assetTitleLabel.set_markup("<span font='Lato Light 15'>Layer Options:</span>");
+            assetTitleLabel.set_markup("<span font='WenQuanYi Zen Hei 15'>图层选项:</span>");
 
-            assetVisibleComboBox.append("show", "Show layer");
-            assetVisibleComboBox.append("hide", "Hide layer");
+            assetVisibleComboBox.append("show", "显示图层");
+            assetVisibleComboBox.append("hide", "隐藏图层");
             assetVisibleComboBox.active = 0;
 
 
-            assetModeComboBox.append("noanimation", "No Animation");
-            assetModeComboBox.append("light", "Glowing Light");
-            assetModeComboBox.append("clouds", "Moving Clouds");
+            assetModeComboBox.append("noanimation", "没有动画");
+            assetModeComboBox.append("light", "闪亮登场");
+            assetModeComboBox.append("clouds", "云层移动");
             assetModeComboBox.active = 0;
 
             // Signals
