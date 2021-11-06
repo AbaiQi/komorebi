@@ -42,10 +42,10 @@ namespace Komorebi.OnScreen {
     	private Button closeButton = new Button();
 
     	// File/Directory title
-    	public Label titleLabel = new Label("No name");
+    	public Label titleLabel = new Label("没有名字");
 
     	// File/Directory size
-    	public Label sizeLabel = new Label("Size unknown");
+    	public Label sizeLabel = new Label("尺寸未知");
 
         // Separator
         private Separator separator = new Separator(Orientation.HORIZONTAL);
@@ -55,19 +55,19 @@ namespace Komorebi.OnScreen {
         private Box fileInfoBox = new Box(Orientation.VERTICAL, 5);
 
         // Location
-        public RowLabel locationLabel = new RowLabel("Location");
+        public RowLabel locationLabel = new RowLabel("地点");
 
         // Type
-        public RowLabel typeLabel = new RowLabel("Type");
+        public RowLabel typeLabel = new RowLabel("类型");
 
         // Accessed
-        public RowLabel accessedLabel = new RowLabel("Accessed");
+        public RowLabel accessedLabel = new RowLabel("访问量");
 
         // Modified
-        public RowLabel modifiedLabel = new RowLabel("Modified");
+        public RowLabel modifiedLabel = new RowLabel("修改后");
 
         // Owner
-        public RowLabel ownerLabel = new RowLabel("Owner");
+        public RowLabel ownerLabel = new RowLabel("所有权");
 
         string headerBarCSS = "*{
                                 background-color: rgba(25,25,25,0.7);
@@ -161,8 +161,8 @@ namespace Komorebi.OnScreen {
             var modifiedTime = (int64) fileInfo.get_attribute_uint64(FileAttribute.TIME_CHANGED);
             var owner = fileInfo.get_attribute_string(FileAttribute.OWNER_USER);
 
-            titleLabel.set_markup(@"<span font='Lato 13'>$(file.get_basename())</span>");
-            sizeLabel.set_markup(@"<span font='Lato 10'>$(GLib.format_size (fileInfo.get_size()))</span>");
+            titleLabel.set_markup(@"<span font='WenQuanYi Zen Hei 13'>$(file.get_basename())</span>");
+            sizeLabel.set_markup(@"<span font='WenQuanYi Zen Hei 10'>$(GLib.format_size (fileInfo.get_size()))</span>");
 
             locationLabel.set_value(path);
             typeLabel.set_value(fileInfo.get_content_type());

@@ -71,17 +71,17 @@ namespace Komorebi.OnScreen {
 			this.parent = parent;
 
 			// Desktop items
-			newFolderMenuItem = new BubbleMenuItem("New Folder");
-			refreshMenuItem = new BubbleMenuItem("Refresh Wallpaper");
-			pasteMenuItem = new BubbleMenuItem("Paste");
-			changeWallpaperMenuItem = new BubbleMenuItem("Change Wallpaper");
-			preferencesMenuItem = new BubbleMenuItem("Desktop Preferences");
+			newFolderMenuItem = new BubbleMenuItem("新建文件夹");
+			refreshMenuItem = new BubbleMenuItem("刷新壁纸");
+			pasteMenuItem = new BubbleMenuItem("粘贴");
+			changeWallpaperMenuItem = new BubbleMenuItem("更改壁纸");
+			preferencesMenuItem = new BubbleMenuItem("桌面设置");
 
 			// icon items
-			moveToTrashMenuItem = new BubbleMenuItem("Move to Trash");
-			copyMenuItem = new BubbleMenuItem("Copy Path");
-			makeAliasMenuItem = new BubbleMenuItem("Make Alias");
-			getInfoMenuItem = new BubbleMenuItem("Get Info");
+			moveToTrashMenuItem = new BubbleMenuItem("移至回收站");
+			copyMenuItem = new BubbleMenuItem("复制路径");
+			makeAliasMenuItem = new BubbleMenuItem("创建快捷方式");
+			getInfoMenuItem = new BubbleMenuItem("查看信息");
 
 			add_child(moveToTrashMenuItem);
 			add_child(copyMenuItem);

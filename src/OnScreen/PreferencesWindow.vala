@@ -29,8 +29,8 @@ namespace Komorebi.OnScreen {
 		// Custom headerbar
 		HeaderBar headerBar = new HeaderBar();
 
-		Button hideButton = new Button.with_label("Hide");
-		Button quitButton = new Button.with_label("Quit Komorebi");
+		Button hideButton = new Button.with_label("隐藏");
+		Button quitButton = new Button.with_label("关闭Komorebi");
 
 		// Contains two pages (Preferences and Wallpapers)
 		Gtk.Notebook notebook = new Gtk.Notebook();
@@ -44,17 +44,17 @@ namespace Komorebi.OnScreen {
 		Label titleLabel = new Label("");
 		Label aboutLabel = new Label("");
 
-		Gtk.CheckButton twentyFourHoursButton = new Gtk.CheckButton.with_label ("Use 24-hour time");
-		Gtk.CheckButton enableAutostartButton = new Gtk.CheckButton.with_label ("Launch Komorebi on system startup");
-		Gtk.CheckButton showDesktopIconsButton = new Gtk.CheckButton.with_label ("Show desktop icons");
-		Gtk.CheckButton enableVideoWallpapersButton = new Gtk.CheckButton.with_label ("Enable Video Wallpapers (Restarting Komorebi is required)");
-		Gtk.CheckButton mutePlaybackButton = new Gtk.CheckButton.with_label ("Mute Video playback");
-		Gtk.CheckButton pausePlaybackButton = new Gtk.CheckButton.with_label ("Pause Video playback on un-focus");
+		Gtk.CheckButton twentyFourHoursButton = new Gtk.CheckButton.with_label ("使用24小时制时间");
+		Gtk.CheckButton enableAutostartButton = new Gtk.CheckButton.with_label ("系统启动时启动Komorebi");
+		Gtk.CheckButton showDesktopIconsButton = new Gtk.CheckButton.with_label ("显示桌面图标");
+		Gtk.CheckButton enableVideoWallpapersButton = new Gtk.CheckButton.with_label ("启用视频壁纸 (需要重新启动Komorebi)");
+		Gtk.CheckButton mutePlaybackButton = new Gtk.CheckButton.with_label ("视频壁纸设为静音");
+		Gtk.CheckButton pausePlaybackButton = new Gtk.CheckButton.with_label ("视频壁纸不聚焦时暂停(可减少资源使用)");
 
 		Gtk.Box bottomPreferencesBox = new Box(Orientation.HORIZONTAL, 10);
 
-		Button donateButton = new Button.with_label("Donate");
-		Button reportButton = new Button.with_label("Report an issue");
+		Button donateButton = new Button.with_label("捐赠");
+		Button reportButton = new Button.with_label("报告一个问题");
 
 		// Contains wallpapers page widgets
 		Gtk.Box wallpapersPage = new Box(Orientation.VERTICAL, 10);
@@ -119,7 +119,7 @@ namespace Komorebi.OnScreen {
 				border: none;
 			}
 			";
-		public PreferencesWindow (string selectedTab = "preferences") {
+		public PreferencesWindow (string selectedTab = "偏好") {
 
 			title = "";
 			set_size_request(760, 500);
@@ -133,8 +133,8 @@ namespace Komorebi.OnScreen {
 
 			// Setup Widgets
 			titleLabel.set_markup("<span font='Lato Light 30px' color='white'>Komorebi</span>");
-			aboutLabel.set_markup("<span font='Lato Light 15px' color='white'>by Komorebi Team</span>");
-
+			aboutLabel.set_markup("<span font='Lato Light 15px' color='white'>by Komorebi Team</span>");			
+			
 			// showSystemStatsButton.active = showInfoBox;
 			twentyFourHoursButton.active = timeTwentyFour;
 			enableAutostartButton.active = autostart;
@@ -302,7 +302,7 @@ namespace Komorebi.OnScreen {
 
 			if(!canPlayVideos()) {
 
-				infoBar.get_content_area().add(new Label("gstreamer1.0-libav is missing. You won't be able to set video wallpapers without it."));
+				infoBar.get_content_area().add(new Label("缺少gstreamer1.0-libav。没有它你将无法设置视频壁纸。"));
 				wallpapersPage.add(infoBar);
 			}
 
@@ -310,12 +310,12 @@ namespace Komorebi.OnScreen {
 			wallpapersPage.add(bottomWallpapersBox);
 
 
-			if(selectedTab == "wallpapers") {
-				notebook.append_page(wallpapersPage, new Label("Wallpapers"));
-				notebook.append_page(preferencesPage, new Label("Preferences"));
+			if(selectedTab == "壁纸") {
+				notebook.append_page(wallpapersPage, new Label("壁纸"));
+				notebook.append_page(preferencesPage, new Label("首选项"));
 			} else {
-				notebook.append_page(preferencesPage, new Label("Preferences"));
-				notebook.append_page(wallpapersPage, new Label("Wallpapers"));
+				notebook.append_page(preferencesPage, new Label("首选项"));
+				notebook.append_page(wallpapersPage, new Label("壁纸"));
 			}
 
 
